@@ -71,10 +71,10 @@ def rds_pay_draft_grade(sync_date, settlement_method, jh_token):
             and pay.FDATE = '{sync_date}'; 
             """
 
-    res = jh_app.select(sql)
-    print(res)
-    print(sql)
-    # jh_app.update(sql)
+    # res = jh_app.select(sql)
+    # print(res)
+    # print(sql)
+    jh_app.update(sql)
 
 
 # 付款单 --我方银行账号

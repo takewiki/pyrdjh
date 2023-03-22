@@ -67,14 +67,14 @@ def rds_pay_draft_grade(sync_date, settlement_method, jh_token):
             on settlement.FID = pay.FSETTLETYPEID
             where settlement.FNAME = '{settlement_method}'
             and (vables.DC_I_DRAFTGRADE != pay.F_NLJ_DRAFTGRADE or pay.FTK_BAK_NO != vables.FRECBANKACNTID)
-            -- and pay.FBILLNO = 'FKD00000111';
+            -- and pay.FBILLNO = 'FKD00010203';
             and pay.FDATE = '{sync_date}'; 
             """
 
-    # res = jh_app.select(sql)
-    # print(res)
-    # print(sql)
-    jh_app.update(sql)
+    res = jh_app.select(sql)
+    print(res)
+    print(sql)
+    # jh_app.update(sql)
 
 
 # 付款单 --我方银行账号
@@ -92,8 +92,8 @@ def rds_pay_bank_account(sync_date, settlement_method, jh_token):
             on settlement.FID = pay.FSETTLETYPEID
             where settlement.FNAME = '{settlement_method}'
             and pay.FACCOUNTID != vables.FRECBANKACNTID
-            -- and pay.FBILLNO = 'FKD00000111';
-            and pay.FDATE = '{sync_date}'; 
+            -- and pay.FBILLNO = 'FKD00010203';
+            and pay.FDATE = '{sync_date}';
             """
 
     # res = jh_app.select(sql)
@@ -127,24 +127,24 @@ def rds_receivable_settlement(sync_date, document_type, jh_token):
 
 
 def main(date, token):
-    # rds_receipt_draft_grade(date, '银行电子承兑汇票', token)
-    # rds_receipt_bank_account(date, '银行电子承兑汇票', token)
-    # rds_receipt_draft_grade(date, '银行纸质承兑汇票', token)
-    # rds_receipt_bank_account(date, '银行纸质承兑汇票', token)
-    # rds_pay_draft_grade(date, '应收票据背书', token)
-    # rds_pay_bank_account(date, '应收票据背书', token)
+    rds_receipt_draft_grade(date, '银行电子承兑汇票', token)
+    rds_receipt_bank_account(date, '银行电子承兑汇票', token)
+    rds_receipt_draft_grade(date, '银行纸质承兑汇票', token)
+    rds_receipt_bank_account(date, '银行纸质承兑汇票', token)
+    rds_pay_draft_grade(date, '应收票据背书', token)
+    rds_pay_bank_account(date, '应收票据背书', token)
     rds_receivable_settlement(date, '应收票据背书', token)
-    # rds_receivable_settlement(date, '应收票据到期收款', token)
-    # rds_receivable_settlement(date, '应收票据贴现', token)
-    # rds_receivable_settlement(date, '应收票据退票', token)
+    rds_receivable_settlement(date, '应收票据到期收款', token)
+    rds_receivable_settlement(date, '应收票据贴现', token)
+    rds_receivable_settlement(date, '应收票据退票', token)
 
 
 if __name__ == '__main__':
-    jh_test_token = 'F91CF3E3-8962-47F2-823F-C5CCAAFC66CA'
-    main('2023-3-16', jh_test_token)
+    # jh_test_token = 'F91CF3E3-8962-47F2-823F-C5CCAAFC66CA'
+    # main('2023-3-16', jh_test_token)
 
-    # jh_token = 'C0426D23-1927-4314-8736-A74B2EF7A039'
-    # main('2020-3-20', jh_token)
+    jh_token = 'C0426D23-1927-4314-8736-A74B2EF7A039'
+    main('2020-3-20', jh_token)
 
     # rds_receipt_draft_grade('2019-6-26', '银行电子承兑汇票', jh_test_token)
     # rds_receipt_bank_account('2019-6-26', '银行电子承兑汇票', jh_test_token)

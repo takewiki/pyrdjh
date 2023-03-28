@@ -9,7 +9,7 @@ def read_data(input_excel):
 
 
 # 更新票据
-def do_his(token, df):
+def updatedraftgrade(token, df):
     jh_app = RdClient(token=token)
 
     df_columns = df.columns.to_list()
@@ -49,7 +49,7 @@ def do_his(token, df):
 
 def main(input_excel, token):
     df = read_data(input_excel)
-    do_his(token, df)
+    updatedraftgrade(token, df)
 
 
 if __name__ == '__main__':

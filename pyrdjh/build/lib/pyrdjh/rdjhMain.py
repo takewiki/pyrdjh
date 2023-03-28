@@ -3,13 +3,13 @@ from pyrda.dbms.rds import RdClient
 
 
 # 读取文件
-def read_data(input_excel):
+def ReadData(input_excel):
     df = pd.read_excel(input_excel, engine='openpyxl')
     return df
 
 
 # 更新票据
-def updatedraftgrade(token, df):
+def UpdateDraftGrade(token, df):
     jh_app = RdClient(token=token)
 
     df_columns = df.columns.to_list()
@@ -48,8 +48,8 @@ def updatedraftgrade(token, df):
 
 
 def main(input_excel, token):
-    df = read_data(input_excel)
-    updatedraftgrade(token, df)
+    df = ReadData(input_excel)
+    UpdateDraftGrade(token, df)
 
 
 if __name__ == '__main__':

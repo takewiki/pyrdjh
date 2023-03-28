@@ -7,9 +7,9 @@ input_excel = r"C:\Users\zzy1\Desktop\需处理历史单据清单.xlsx"
 rdjhMain.main(input_excel=input_excel, token=jh_test_token)
 
 # # 读取数据，输出datafram
-# df = rdjhMain.read_data(input_excel=input_excel)
+# df = rdjhMain.ReadData(input_excel=input_excel)
 #
 # # 更新汇票等级
-# rdjhMain.updatedraftgrade(token=jh_test_token, df=df)
+# rdjhMain.UpdateDraftGrade(token=jh_test_token, df=df)
 
 

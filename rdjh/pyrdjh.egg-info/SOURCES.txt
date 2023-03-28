@@ -1,8 +1,8 @@
 setup.py
-pyrdjh/__init__.py
-pyrdjh/rdjhMain.py
 pyrdjh.egg-info/PKG-INFO
 pyrdjh.egg-info/SOURCES.txt
 pyrdjh.egg-info/dependency_links.txt
 pyrdjh.egg-info/requires.txt
 pyrdjh.egg-info/top_level.txt
+rdjhreceivables/ReceivablesMain.py
+rdjhreceivables/__init__.py

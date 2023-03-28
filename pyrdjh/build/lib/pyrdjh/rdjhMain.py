@@ -26,7 +26,7 @@ def updatedraftgrade(token, df):
 
             fbillnumbers = '('
             for fbillnumber in fbillnumber_list:
-                fbillnumbers = fbillnumbers + f"'{str(int(fbillnumber))}'" + ','
+                fbillnumbers = fbillnumbers + f"'{str(fbillnumber)}'" + ','
             fbillnumbers = fbillnumbers[:-1] + ')'
 
             # print(fbillnumbers)

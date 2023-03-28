@@ -25,4 +25,4 @@ setup(
 )
 
 
-# git
+# python setup.py bdist_wheel

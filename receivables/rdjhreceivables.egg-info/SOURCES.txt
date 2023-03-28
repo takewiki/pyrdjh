@@ -1,8 +1,0 @@
-setup.py
-rdjhreceivables/ReceivablesMain.py
-rdjhreceivables/__init__.py
-rdjhreceivables.egg-info/PKG-INFO
-rdjhreceivables.egg-info/SOURCES.txt
-rdjhreceivables.egg-info/dependency_links.txt
-rdjhreceivables.egg-info/requires.txt
-rdjhreceivables.egg-info/top_level.txt

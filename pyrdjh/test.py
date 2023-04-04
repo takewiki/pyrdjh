@@ -8,8 +8,9 @@ rdjhMain.main(input_excel=input_excel, token=jh_test_token)
 
 # # 读取数据，输出datafram
 # df = rdjhMain.ReadData(input_excel=input_excel)
-#
+
 # # 更新汇票等级
 # rdjhMain.UpdateDraftGrade(token=jh_test_token, df=df)
 
-
+# 查询更新结果
+rdjhMain.readres(jh_test_token)

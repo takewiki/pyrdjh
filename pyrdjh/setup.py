@@ -10,7 +10,7 @@ from setuptools import find_packages
 
 setup(
     name='pyrdjh',
-    version='1.1.1',
+    version='1.2.0',
     install_requires=[
         'requests',
     ],

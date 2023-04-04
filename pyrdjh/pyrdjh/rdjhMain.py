@@ -47,6 +47,15 @@ def UpdateDraftGrade(token, df):
         return "传入数据字段不匹配，请参考模版"
 
 
+def readres(token):
+    jh_app = RdClient(token=token)
+    sql = f"""SELECT vables.FBILLNO, vables.DC_I_DRAFTGRADE as '应收票据汇票等级',his.DC_I_DRAFTGRADE as '需求汇票等级'
+    FROM[rds_vw_receivables] vables inner join RDS_JH_T_receivables_his his on vables.FBILLNO = his.FBILLNO
+    """
+    res = jh_app.select(sql)
+    return res
+
+
 def main(input_excel, token):
     df = ReadData(input_excel)
     UpdateDraftGrade(token, df)
@@ -55,4 +64,6 @@ def main(input_excel, token):
 if __name__ == '__main__':
     jh_test_token = 'F91CF3E3-8962-47F2-823F-C5CCAAFC66CA'
     input_excel = r"C:\Users\zzy1\Desktop\需处理历史单据清单.xlsx"
-    main(input_excel, jh_test_token)
+    # main(input_excel, jh_test_token)
+    res = readres(jh_test_token)
+    print(res)
